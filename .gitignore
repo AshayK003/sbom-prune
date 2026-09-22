@@ -51,5 +51,6 @@ results/*.pdf
 .DS_Store
 Thumbs.db
 
-# Internal working documents (never committed)
-internals/
+# Internal working documents (never committed, except the published report)
+internals/*
+!internals/report.pdf

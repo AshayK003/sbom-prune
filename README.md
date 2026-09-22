@@ -1,6 +1,7 @@
 # SBOM Reachability Pruning (Python)
 
 **Author:** [Ashay Kushwaha](https://github.com/AshayK003) ([CypherLabs](https://github.com/AshayK003))
+**Report:** [internals/report.pdf](internals/report.pdf)
 
 > **Status: measured on CPython 3.12.10 (Windows), `python report.py`
 > regenerates every number.** Article follows numbers, never precedes them.
