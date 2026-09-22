@@ -2,9 +2,8 @@
 
 **Author:** [Ashay Kushwaha](https://github.com/AshayK003) ([CypherLabs](https://github.com/AshayK003))
 
-> **Status: corpus recon in progress — no numbers yet.** Nothing below is
-> claimed until one command reproduces it. Article follows numbers, never
-> precedes them.
+> **Status: measured on CPython 3.12.10 (Windows), `python report.py`
+> regenerates every number.** Article follows numbers, never precedes them.
 
 ---
 
@@ -29,6 +28,30 @@ usage analysis to verdict each finding `reachable`, `imported-unused`,
 or `unimported` --- then measure precision before/after pruning on a
 fixed 8-repo corpus, with ground truth from manual audit. No floating
 percentages cited; our own numbers or nothing.
+
+## Results (`python report.py`, frozen OSV snapshot 2026-09-22)
+
+162 version-match findings across 8 roots prune to 143 reachable-only
+(19 pruned). Manual audit of all 11 finding-bearing verdicts against
+actual import lines: precision **0.88 before → 1.00 after**, zero
+reachable findings dropped.
+
+| Root | Findings | Kept | Pruned | Note |
+|---|---|---|---|---|
+| requests 2.28.2 | 20 | 20 | 0 | urllib3/idna/certifi all used |
+| flask 2.0.3 | 30 | 30 | 0 | Werkzeug/Jinja2/click all used |
+| httpie 3.2.2 | 31 | 12 | 19 | dev-Werkzeug never imported |
+| black 23.12.1+jupyter | 81 | 81 | 0 | aiohttp via optional blackd daemon (documented nuance, not silent) |
+| pydantic, jinja2, redos-harness, pyyaml | 0 | 0 | 0 | clean controls |
+
+Two predictions overturned by evidence, both documented: aiohttp is
+imported by shipped `blackd` (verdict reachable per spec; prune story
+rests on Werkzeug-dev), and the empty-summary click record is a real
+advisory (CVE-2026-7246, range verified to include 8.0.4).
+
+Accept-rule for every verdict: imports read from shipped wheels, benign
+ground truth from manual audit (`internals/AUDIT.json`, not committed) —
+never inferred, never cited from elsewhere.
 
 ## References
 

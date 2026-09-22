@@ -10,7 +10,10 @@ console-script-only deps are invisible to this analysis by construction.
 """
 
 import ast
+import sys
 from pathlib import Path
+
+_STDLIB = set(getattr(sys, "stdlib_module_names", ()))
 
 
 def file_imports(tree):
@@ -90,6 +93,6 @@ def compute(root, dist_map):
         else:
             verdicts[dist] = "imported-unused"
     for mod in imports:
-        if mod not in wanted:
+        if mod not in wanted and mod not in _STDLIB:
             unknown[mod] = sorted(files[mod])
     return verdicts, unknown

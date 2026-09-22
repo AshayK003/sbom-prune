@@ -34,7 +34,7 @@
       "vulns": {
         "requests": ["GHSA-9hjg-9r4m-mvj7", "GHSA-9wx4-h78v-vm56", "GHSA-gc5v-m9x4-r6x2", "GHSA-j8r2-6x86-q33q", "PYSEC-2023-74", "PYSEC-2026-1872", "PYSEC-2026-1873", "PYSEC-2026-2275"],
         "pygments": ["GHSA-5239-wwwm-4pmq", "GHSA-mrwq-x4v8-fh7p", "PYSEC-2023-117", "PYSEC-2026-2987"],
-        "Werkzeug": ["(same 19 as flask entry)"]
+        "Werkzeug": ["GHSA-29vq-49wr-vm6x", "GHSA-2g68-c3qc-8985", "GHSA-87hc-h4r5-73f7", "GHSA-f9vj-2wh5-fj8j", "GHSA-hgf8-39gv-g3f2", "GHSA-hrfv-mqp8-q5rw", "GHSA-px8h-6qxv-m22q", "GHSA-q34m-jh98-gwm2", "GHSA-xg9f-g7g7-2323", "PYSEC-2022-203", "PYSEC-2023-221", "PYSEC-2023-57", "PYSEC-2023-58", "PYSEC-2026-2043", "PYSEC-2026-2044", "PYSEC-2026-2045", "PYSEC-2026-2046", "PYSEC-2026-2320", "PYSEC-2026-3417"]
       },
       "predicted": {"requests": "reachable (nested: urllib3 inside requests is out of scope v1)", "pygments": "reachable", "Werkzeug-dev": "prune (dev-only, unimported at runtime)", "rich": "clean", "multidict": "clean", "defusedxml": "clean", "requests-toolbelt": "clean"},
       "note": "Nested vulns (urllib3 via requests) are recorded but NOT traversed in v1 — one level only, documented."
@@ -45,10 +45,10 @@
       "pins": {"click": "8.0.4", "packaging": "22.0", "pathspec": "0.9.0", "platformdirs": "2.6.2", "mypy-extensions": "0.4.3", "aiohttp": "3.8.6", "ipython": "8.12.0"},
       "vulns": {
         "click": ["PYSEC-2026-2132"],
-        "aiohttp": ["GHSA-2fqr-mr3j-6wp8 (plus 79 more — 80 total, see audit log)"]
+        "aiohttp": ["GHSA-2fqr-mr3j-6wp8", "GHSA-2vrm-gr82-f7m5", "GHSA-3wq7-rqq7-wx6j", "GHSA-4fvr-rgm6-gqmc", "GHSA-4m7w-qmgq-4wqf", "GHSA-54jq-c3m8-4m76", "GHSA-5h86-8mv2-jq9f", "GHSA-5m98-qgg9-wh84", "GHSA-63hf-3vf5-4wqf", "GHSA-63hw-fmq6-xxg2", "GHSA-69f9-5gxw-wvc2", "GHSA-6jhg-hg63-jvvf", "GHSA-6mq8-rvhq-8wgg", "GHSA-7gpw-8wmc-pm8g", "GHSA-8495-4g3g-x7pr", "GHSA-8qpw-xqxj-h4r2", "GHSA-9548-qrrj-x5pj", "GHSA-966j-vmvw-g2g9", "GHSA-9x8q-7h8h-wcw9", "GHSA-c427-h43c-vf67", "GHSA-cq5v-8q36-5273", "GHSA-fh55-r93g-j68g", "GHSA-g3cq-j2xw-wf74", "GHSA-g84x-mcqj-x9qq", "GHSA-hcc4-c3v8-rx92", "GHSA-hg6j-4rv6-33pg", "GHSA-hpj7-wq8m-9hgp", "GHSA-jg22-mg44-37j8", "GHSA-jj3x-wxrx-4x23", "GHSA-m5qp-6w8w-w647", "GHSA-m6qw-4cw2-hm4m", "GHSA-mfx4-hv73-q22v", "GHSA-mq44-7p77-q5h7", "GHSA-mqqc-3gqh-h2x8", "GHSA-mwh4-6h8g-pg8w", "GHSA-p998-jp59-783m", "GHSA-q3qx-c6g2-h6x2", "GHSA-qvrw-v9rv-5rjx", "GHSA-w2fm-2cpv-w7v5", "GHSA-xcgm-r5h9-7989", "PYSEC-2023-250", "PYSEC-2023-251", "PYSEC-2024-24", "PYSEC-2024-26", "PYSEC-2026-1097", "PYSEC-2026-1098", "PYSEC-2026-1099", "PYSEC-2026-1100", "PYSEC-2026-1101", "PYSEC-2026-1102", "PYSEC-2026-1103", "PYSEC-2026-1104", "PYSEC-2026-1105", "PYSEC-2026-1106", "PYSEC-2026-1107", "PYSEC-2026-1109", "PYSEC-2026-2094", "PYSEC-2026-2095", "PYSEC-2026-2096", "PYSEC-2026-2097", "PYSEC-2026-2098", "PYSEC-2026-2099", "PYSEC-2026-2100", "PYSEC-2026-2101", "PYSEC-2026-2102", "PYSEC-2026-2103", "PYSEC-2026-2104", "PYSEC-2026-2105", "PYSEC-2026-2106", "PYSEC-2026-2107", "PYSEC-2026-2108", "PYSEC-2026-2109", "PYSEC-2026-2110", "PYSEC-2026-2111", "PYSEC-2026-2112", "PYSEC-2026-2113", "PYSEC-2026-237", "PYSEC-2026-3545", "PYSEC-2026-3546", "PYSEC-2026-3547"]
       },
       "predicted": {"aiohttp": "PRUNE (80 vulns, jupyter-extra, never imported by black core)", "ipython": "unimported-clean", "click": "verdict-plus-note", "packaging": "clean", "pathspec": "clean", "platformdirs": "clean", "mypy-extensions": "clean"},
-      "note": "The prune showcase: 80 findings on an extra the tool never imports."
+      "note": "PREDICTION OVERTURNED 2026-09-22: aiohttp IS imported+used by shipped blackd/__init__.py + middlewares.py, so the verdict is reachable per SPEC. The prune story rests on httpie/Werkzeug-dev instead. blackd nuance (optional daemon) documented in AUDIT.json — motivates entry-point-aware v2."
     },
     {
       "id": "pydantic",
