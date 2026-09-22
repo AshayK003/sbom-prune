@@ -1,0 +1,3 @@
+vulnlib==1.0
+unusedlib==2.0
+cleanlib==3.0

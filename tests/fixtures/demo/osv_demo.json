@@ -1,0 +1,27 @@
+{
+  "cleanlib": [],
+  "unusedlib": [
+    {
+      "affected": [
+        {
+          "package": {"ecosystem": "PyPI", "name": "unusedlib"},
+          "ranges": [{"events": [{"introduced": "0"}, {"fixed": "2.1"}], "type": "ECOSYSTEM"}]
+        }
+      ],
+      "id": "CVE-20XX-0002",
+      "summary": "Fixture: unusedlib issue (must prune)"
+    }
+  ],
+  "vulnlib": [
+    {
+      "affected": [
+        {
+          "package": {"ecosystem": "PyPI", "name": "vulnlib"},
+          "ranges": [{"events": [{"introduced": "0"}, {"fixed": "1.1"}], "type": "ECOSYSTEM"}]
+        }
+      ],
+      "id": "CVE-20XX-0001",
+      "summary": "Fixture: vulnlib issue (must keep)"
+    }
+  ]
+}
