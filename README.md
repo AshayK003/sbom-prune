@@ -57,6 +57,14 @@ Accept-rule for every verdict: imports read from shipped wheels, benign
 ground truth from manual audit (`internals/AUDIT.json`, not committed) —
 never inferred, never cited from elsewhere.
 
+## Screenshots
+
+![python report.py output](docs/report-output.png)
+*`python report.py` on the frozen corpus: 162 findings → 143 reachable-only (19 pruned).*
+
+![pytest tests -q output](docs/tests-output.png)
+*`pytest tests -q`: 3 passed.*
+
 ## References
 
 - OSV API (`v1/query`): https://google.github.io/osv.dev/post-v1-query/
